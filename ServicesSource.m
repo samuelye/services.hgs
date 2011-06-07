@@ -9,7 +9,11 @@
 #import "Macros.h"
 
 #pragma mark ServiceEntry Keys
+<<<<<<< HEAD
+NSString *const kServicesEntryNameKeyPath = @"NSMenuItem.default";  //@"NSPortName"; 
+=======
 NSString *const kServicesEntryNameKeyPath = @"NSMenuItem.default";
+>>>>>>> 261914f74fa6eae3648a4904f24ae24fc286e2c5
 NSString *const kServicesEntryBundleIdentifierKey = @"NSBundleIdentifier";
 NSString *const kServicesEntryBundlePathKey = @"NSBundlePath";
 NSString *const kServicesEntryReturnTypesKey = @"NSReturnTypes";
@@ -45,14 +49,32 @@ static NSString *_ServicesSnippetForName(const NSString *name)
   return [NSString stringWithFormat:kServicesSnippetFormat, name];
 }
 
+<<<<<<< HEAD
+/*static NSURL *_ServicesURLForName(const NSString *name)
+=======
 static NSURL *_ServicesURLForName(const NSString *name)
+>>>>>>> 261914f74fa6eae3648a4904f24ae24fc286e2c5
 {
   NSString *escaped
     = [name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   NSString *uri = [NSString stringWithFormat:kServicesURLFormat, escaped];
   return [NSURL URLWithString:uri];
+<<<<<<< HEAD
+}*/
+
+static NSString *_ServicesURIForName(const NSString *name)
+{
+    NSString *escaped
+    = [name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *uri = [NSString stringWithFormat:kServicesURLFormat, escaped];
+    return uri;
 }
 
+
+=======
+}
+
+>>>>>>> 261914f74fa6eae3648a4904f24ae24fc286e2c5
 static HGSAction *_ServicesDefaultAction(void)
 {
   HGSExtensionPoint *actions = [HGSExtensionPoint actionsPoint];
@@ -62,7 +84,11 @@ static HGSAction *_ServicesDefaultAction(void)
 static HGSResult *_ServicesResultWithAttributes(HGSResult *result, NSDictionary *attrs)
 {
   // TODO: For compatibility with old Release.
+<<<<<<< HEAD
+  return [result resultByAddingAttributes:attrs];
+=======
   return [result mergeWith:[HGSResult resultWithURL:[result url] name:[result displayName] type:[result type] source:[result source] attributes:attrs]];
+>>>>>>> 261914f74fa6eae3648a4904f24ae24fc286e2c5
 }
 
 #pragma mark -
@@ -140,10 +166,20 @@ static NSPredicate *_ServicesPredicateForPivot(const HGSResult *pivot)
 @interface ServicesSource : HGSMemorySearchSource
 - (void)recacheContents;
 - (void)recacheContentsAfterDelay:(NSTimeInterval)delay;
+<<<<<<< HEAD
+- (void)indexResultForService:(NSDictionary *)service DB:(HGSMemorySearchSourceDB*)database;
+- (BOOL)isValidSourceForQuery:(HGSQuery *)query;
+- (void)processMatchingResults:(NSMutableArray*)results
+                      forQuery:(HGSQuery *)query;
+- (HGSResult *)preFilterResult:(HGSResult *)result 
+               matchesForQuery:(HGSQuery*)query
+                  pivotObjects:(HGSResultArray *)pivotObjects;
+=======
 - (void)indexResultForService:(NSDictionary *)service;
 - (BOOL)isValidSourceForQuery:(HGSQuery *)query;
 - (void)processMatchingResults:(NSMutableArray*)results
                       forQuery:(HGSQuery *)query;
+>>>>>>> 261914f74fa6eae3648a4904f24ae24fc286e2c5
 @end
 
 #pragma mark -
@@ -172,6 +208,25 @@ static NSPredicate *_ServicesPredicateForPivot(const HGSResult *pivot)
 
 - (void)recacheContents
 {
+<<<<<<< HEAD
+//  [self clearResultIndex];
+    HGSMemorySearchSourceDB *database = [HGSMemorySearchSourceDB database];
+
+  for (NSDictionary *service in _ServicesList())
+      [self indexResultForService:service DB:database];
+    
+    [self saveResultsCache];
+    [self replaceCurrentDatabaseWith:database];
+
+//  [self recacheContentsAfterDelay:60.0];
+}
+
+- (void)indexResultForService:(NSDictionary *)service DB:(HGSMemorySearchSourceDB*)database
+{
+  NSString *name = [service valueForKeyPath:kServicesEntryNameKeyPath];
+  if (isEmpty(name)) {
+    //HGSLogDebug(@"%@: Skipping unnamed Service: %@", self, service);
+=======
   [self clearResultIndex];
   for (NSDictionary *service in _ServicesList())
     [self indexResultForService:service];
@@ -183,11 +238,34 @@ static NSPredicate *_ServicesPredicateForPivot(const HGSResult *pivot)
   NSString *name = [service valueForKeyPath:kServicesEntryNameKeyPath];
   if (isEmpty(name)) {
     HGSLogDebug(@"%@: Skipping unnamed Service: %@", self, service);
+>>>>>>> 261914f74fa6eae3648a4904f24ae24fc286e2c5
     return;
   }
   NSString *path = [service valueForKey:kServicesEntryBundlePathKey];
   NSString *snip = [[NSFileManager defaultManager] displayNameAtPath:path];
   NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
+<<<<<<< HEAD
+  
+    [attrs setObject:_ServicesSnippetForName(snip)
+            forKey:kHGSObjectAttributeSnippetKey];
+  
+    [attrs setObject:[[NSWorkspace sharedWorkspace] iconForFile:path]
+            forKey:kHGSObjectAttributeIconKey];  //kHGSObjectAttributeIconKey
+  
+    [attrs setObject:_ServicesDefaultAction()
+            forKey:kHGSObjectAttributeDefaultActionKey];
+  
+    [attrs setObject:service forKey:kServicesItemKey];
+  
+    [attrs setObject:name forKey:kServicesNameKey];
+    
+    HGSResult *rs = (HGSResult*)[HGSUnscoredResult resultWithURI:_ServicesURIForName(name)
+                                        name:[name lastPathComponent]
+                                        type:kServicesItemResultType
+                                      source:self
+                                  attributes:attrs];
+  [database indexResult:rs];
+=======
   [attrs setObject:_ServicesSnippetForName(snip)
             forKey:kHGSObjectAttributeSnippetKey];
   [attrs setObject:[[NSWorkspace sharedWorkspace] iconForFile:path]
@@ -201,6 +279,7 @@ static NSPredicate *_ServicesPredicateForPivot(const HGSResult *pivot)
                                         type:kServicesItemResultType
                                       source:self
                                   attributes:attrs]];
+>>>>>>> 261914f74fa6eae3648a4904f24ae24fc286e2c5
 }
 
 #pragma mark -
@@ -209,7 +288,11 @@ static NSPredicate *_ServicesPredicateForPivot(const HGSResult *pivot)
 {
   if (![super isValidSourceForQuery:query])
     return NO;
+<<<<<<< HEAD
+  if (isEmpty([query /*normalizedQueryString*/tokenizedQueryString]))
+=======
   if (isEmpty([query normalizedQueryString]))
+>>>>>>> 261914f74fa6eae3648a4904f24ae24fc286e2c5
     return NO;
   return YES;
 }
@@ -229,4 +312,40 @@ static NSPredicate *_ServicesPredicateForPivot(const HGSResult *pivot)
   }
 }
 
+<<<<<<< HEAD
+- (HGSResult *)preFilterResult:(HGSResult *)result 
+               matchesForQuery:(HGSQuery*)query
+                  pivotObjects:(HGSResultArray *)pivotObjects
+{
+    BOOL valid = NO;
+    HGSResult *pivot = nil;
+    if ([pivotObjects count]) {
+        for (pivot in pivotObjects) {
+            if (!valid) {
+                if ((valid = (_ServicesPboardTypesForResult(pivot)!=nil))) {
+                    //HGSLogDebug(@"%@: check pivot: %@ valid:%d", self, pivot, valid);
+                    break;
+                }
+            }
+        }
+    } else {
+        pivot = [query pivotObject];
+        valid = (_ServicesPboardTypesForResult(result)!=nil);
+        //HGSLogDebug(@"%@: no pivot: %@", self, pivot);
+
+    }
+    
+    if (valid && pivot) {
+        NSDictionary *data = _ServicesDataForResult(pivot);
+        NSDictionary *attrs = NSDICT(data, kServicesDataKey);        
+        //HGSLogDebug(@"%@: filter result: %@ attrs: %@", self, pivot, attrs);
+        return _ServicesResultWithAttributes(result, attrs);
+    }
+    
+    return nil;
+}
+
+
+=======
+>>>>>>> 261914f74fa6eae3648a4904f24ae24fc286e2c5
 @end

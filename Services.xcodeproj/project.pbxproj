@@ -7,25 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7EDDE7A5139C8D9400992C56 /* GTM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDDE7A3139C8D9400992C56 /* GTM.framework */; };
+		7EDDE7A6139C8D9400992C56 /* Vermilion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDDE7A4139C8D9400992C56 /* Vermilion.framework */; };
+		7EDDE7A8139C8E9700992C56 /* HGSBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDDE7A7139C8E9700992C56 /* HGSBundle.m */; };
+		7EDDE7B2139CD80B00992C56 /* LoadableBundle.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7EDDE7B1139CD80B00992C56 /* LoadableBundle.xcconfig */; };
 		7F38DCE40F6864D90051B7E3 /* ServicesSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F38DCE00F6864D90051B7E3 /* ServicesSource.m */; };
 		7F38DCE50F6864D90051B7E3 /* ServicesAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F38DCE20F6864D90051B7E3 /* ServicesAction.m */; };
-		7F38DD3B0F68694B0051B7E3 /* Vermilion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F38DD3A0F68694B0051B7E3 /* Vermilion.framework */; };
-		7F38DE690F688CC20051B7E3 /* GTM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F38DE680F688CC20051B7E3 /* GTM.framework */; };
 		7F80FC720F696C5B00228142 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F80FC710F696C5B00228142 /* Cocoa.framework */; };
-		8B0D217E0F796E1C00FD4A12 /* HGSBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0D217D0F796E1C00FD4A12 /* HGSBundle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7EDDE7A3139C8D9400992C56 /* GTM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTM.framework; path = "../qsb-mac/framework/GTM.framework"; sourceTree = "<group>"; };
+		7EDDE7A4139C8D9400992C56 /* Vermilion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vermilion.framework; path = "../qsb-mac/framework/Vermilion.framework"; sourceTree = "<group>"; };
+		7EDDE7A7139C8E9700992C56 /* HGSBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HGSBundle.m; path = "../qsb-mac/Vermilion/Vermilion/HGSBundle.m"; sourceTree = "<group>"; };
+		7EDDE7A9139CD6AB00992C56 /* QSBDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = QSBDebug.xcconfig; path = "../qsb-mac/QuickSearchBox/QSB/xcconfig/QSBDebug.xcconfig"; sourceTree = "<group>"; };
+		7EDDE7AA139CD6AB00992C56 /* QSBRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = QSBRelease.xcconfig; path = "../qsb-mac/QuickSearchBox/QSB/xcconfig/QSBRelease.xcconfig"; sourceTree = "<group>"; };
+		7EDDE7B1139CD80B00992C56 /* LoadableBundle.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = LoadableBundle.xcconfig; path = "../qsb-mac/QuickSearchBox/externals/google-toolbox-for-mac/XcodeConfig/Target/LoadableBundle.xcconfig"; sourceTree = "<group>"; };
 		7F38DCE00F6864D90051B7E3 /* ServicesSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesSource.m; sourceTree = "<group>"; };
 		7F38DCE20F6864D90051B7E3 /* ServicesAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesAction.m; sourceTree = "<group>"; };
 		7F38DCE90F6865290051B7E3 /* Services_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Services_Prefix.pch; sourceTree = "<group>"; };
-		7F38DD3A0F68694B0051B7E3 /* Vermilion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Vermilion.framework; sourceTree = QSBBUILDROOT; };
-		7F38DE680F688CC20051B7E3 /* GTM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTM.framework; sourceTree = QSBBUILDROOT; };
 		7F80FC710F696C5B00228142 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		7F8450F40F6B1F7B000CD5C1 /* QSBDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = QSBDebug.xcconfig; path = QSB/xcconfig/QSBDebug.xcconfig; sourceTree = QSBSRCROOT; };
-		7F8450F50F6B1F7B000CD5C1 /* QSBRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = QSBRelease.xcconfig; path = QSB/xcconfig/QSBRelease.xcconfig; sourceTree = QSBSRCROOT; };
-		8B0D217D0F796E1C00FD4A12 /* HGSBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HGSBundle.m; path = ../Vermilion/Vermilion/HGSBundle.m; sourceTree = QSBSRCROOT; };
-		8BAA94490F7A6EBC00DF4F12 /* LoadableBundle.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = LoadableBundle.xcconfig; path = "externals/google-toolbox-for-mac/XcodeConfig/Target/LoadableBundle.xcconfig"; sourceTree = QSBSRCROOT; };
 		8D5B49B6048680CD000E48DA /* Services.hgs */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Services.hgs; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D442493410505D9F00E24EB2 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Macros.h; path = MKMacros/Macros.h; sourceTree = "<group>"; };
@@ -36,8 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F38DD3B0F68694B0051B7E3 /* Vermilion.framework in Frameworks */,
-				7F38DE690F688CC20051B7E3 /* GTM.framework in Frameworks */,
+				7EDDE7A5139C8D9400992C56 /* GTM.framework in Frameworks */,
+				7EDDE7A6139C8D9400992C56 /* Vermilion.framework in Frameworks */,
 				7F80FC720F696C5B00228142 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,9 +86,9 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7EDDE7A3139C8D9400992C56 /* GTM.framework */,
+				7EDDE7A4139C8D9400992C56 /* Vermilion.framework */,
 				7F80FC710F696C5B00228142 /* Cocoa.framework */,
-				7F38DE680F688CC20051B7E3 /* GTM.framework */,
-				7F38DD3A0F68694B0051B7E3 /* Vermilion.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -103,11 +104,11 @@
 		32C88E010371C26100C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7EDDE7B1139CD80B00992C56 /* LoadableBundle.xcconfig */,
+				7EDDE7A9139CD6AB00992C56 /* QSBDebug.xcconfig */,
+				7EDDE7AA139CD6AB00992C56 /* QSBRelease.xcconfig */,
 				D442493410505D9F00E24EB2 /* Macros.h */,
-				8B0D217D0F796E1C00FD4A12 /* HGSBundle.m */,
-				7F8450F40F6B1F7B000CD5C1 /* QSBDebug.xcconfig */,
-				7F8450F50F6B1F7B000CD5C1 /* QSBRelease.xcconfig */,
-				8BAA94490F7A6EBC00DF4F12 /* LoadableBundle.xcconfig */,
+				7EDDE7A7139C8E9700992C56 /* HGSBundle.m */,
 				7F38DCE90F6865290051B7E3 /* Services_Prefix.pch */,
 			);
 			name = "Other Sources";
@@ -141,7 +142,11 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "Services" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 089C166AFE841209C02AAC07 /* Services */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -156,6 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EDDE7B2139CD80B00992C56 /* LoadableBundle.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +174,7 @@
 			files = (
 				7F38DCE40F6864D90051B7E3 /* ServicesSource.m in Sources */,
 				7F38DCE50F6864D90051B7E3 /* ServicesAction.m in Sources */,
-				8B0D217E0F796E1C00FD4A12 /* HGSBundle.m in Sources */,
+				7EDDE7A8139C8E9700992C56 /* HGSBundle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,44 +183,54 @@
 /* Begin XCBuildConfiguration section */
 		1DEB913B08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BAA94490F7A6EBC00DF4F12 /* LoadableBundle.xcconfig */;
+			baseConfigurationReference = 7EDDE7B1139CD80B00992C56 /* LoadableBundle.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(QSBBUILDROOT)",
+					"\"$(SRCROOT)/../qsb-mac/framework\"",
 				);
 				GCC_PREFIX_HEADER = Services_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				INFOPLIST_FILE = Info.plist;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Services;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = hgs;
 			};
 			name = Debug;
 		};
 		1DEB913C08733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BAA94490F7A6EBC00DF4F12 /* LoadableBundle.xcconfig */;
+			baseConfigurationReference = 7EDDE7B1139CD80B00992C56 /* LoadableBundle.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(QSBBUILDROOT)",
+					"\"$(SRCROOT)/../qsb-mac/framework\"",
 				);
 				GCC_PREFIX_HEADER = Services_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
 				INFOPLIST_FILE = Info.plist;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Services;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = hgs;
 			};
 			name = Release;
 		};
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F8450F40F6B1F7B000CD5C1 /* QSBDebug.xcconfig */;
+			baseConfigurationReference = 7EDDE7A9139CD6AB00992C56 /* QSBDebug.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F8450F50F6B1F7B000CD5C1 /* QSBRelease.xcconfig */;
+			baseConfigurationReference = 7EDDE7AA139CD6AB00992C56 /* QSBRelease.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;

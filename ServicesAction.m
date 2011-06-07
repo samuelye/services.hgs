@@ -60,6 +60,12 @@ extern NSString *kServicesItemResultType;
            toPasteboard:pboard];
     }
   }
+<<<<<<< HEAD
+    
+    //HGSLogDebug(@"%@: performWithInfo: %@", self, [result valueForKey:kServicesNameKey]);
+    
+=======
+>>>>>>> 261914f74fa6eae3648a4904f24ae24fc286e2c5
   // TODO(mkhl): We should try to get data form the active application.
   if (!NSPerformService([result valueForKey:kServicesNameKey], pboard))
     return NO;
